@@ -5,9 +5,13 @@ int maxWordLength = 3;
 int maxArrayLength = 30;
 
 if (!GetArray(out sourceArray, maxArrayLength)) sourceArray = fillArray;
-GetFilteredArray(sourceArray, out newArray, maxWordLength);
 PrintArray(sourceArray);
-PrintArray(newArray);
+
+int lenNewArr = GetFilteredArray(sourceArray, out newArray, maxWordLength);
+if (lenNewArr > 0)
+    PrintArray(newArray);
+else
+    Console.WriteLine("Нет подходящих значений в массиве");
 
 int GetFilteredArray(string[] srcArr, out string[] newArr, int maxLen)
 {
@@ -29,7 +33,7 @@ bool GetArray(out string[] arr, int max)
     arr = new string[max];
     int len = 0;
 
-    Console.WriteLine($"Для автозаполнения нажмите Enter, иначе введите строки (Max {max}). Нажимайте Enter для ввода следующей. Для завершения оставьте строку пустой и нажмите Enter.");
+    Console.WriteLine($"Для автозаполнения нажмите Enter, иначе введите строку.\nНажимайте Enter для ввода следующей (Max {max}).\nДля завершения оставьте строку пустой и нажмите Enter.");
 
     for (int i = 0; i < arr.Length; i++)
     {
