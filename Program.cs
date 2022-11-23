@@ -13,6 +13,9 @@ if (lenNewArr > 0)
 else
     Console.WriteLine("Нет подходящих значений в массиве");
 
+
+
+
 int GetFilteredArray(string[] srcArr, out string[] newArr, int maxLen)
 {
     int count = 0;
